@@ -38,9 +38,9 @@ echo -e "     Aktif Sampai: $exp                  " | lolcat
 echo -e "=========================================" | lolcat
 echo -e "   DI LARANG:                            " | lolcat
 echo -e "   HACKING-DDOS-PHISING-SPAM-TORENT      " | lolcat
-echo -e "   MuLuu09   MappakkoE.               " | lolcat
+echo -e "   TeaM   CuCu_AtoK.               " | lolcat
 echo -e "=========================================" | lolcat
-echo -e "   Script by MuLuu09             " | lolcat
+echo -e "   Script by Team CuCuAtoK             " | lolcat
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 echo -e "   Config OVPN:                          " | lolcat
 echo -e "   http://$myip:81/1194-client.ovpn      " | lolcat
@@ -226,7 +226,7 @@ echo "" | lolcat
 echo "" | lolcat
 echo "" | lolcat
 echo "" | lolcat
-echo "        ----[SELAMAT DATANG DI VPS MappakkoE  - ]---"| boxes -d dog | lolcat
+echo "        ----[SELAMAT DATANG DI VPS CuCu_AtoK  - ]---"| boxes -d cat | lolcat
 echo "        ====================================================="| lolcat
 echo "        #           WhatsApp     : +60175835809            #"| lolcat
 echo "        #           Telegram     : @cucu_atok                 #"| lolcat
@@ -299,8 +299,8 @@ do
 	    service dropbear restart
 	    echo "------------+ AUTO KILL SUDAH DI AKTIFKAN BOSS +--------------" | lolcat
 	    
-	echo "Dasar pelit!!! user anda marah2 jangan salahkan saya ya boss
-	nanti jangan lupa di matikan boss" | boxes -d boy | lolcat
+	echo "Perhatian!!! user anda marah2 jangan salahkan saya ya boss
+	nanti jangan lupa di tutup boss" | boxes -d boy | lolcat
 		break
 		;;
 	"Matikan Kill Multi Login")
