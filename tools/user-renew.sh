@@ -16,7 +16,7 @@ fi
 
 echo "----------------- RENEW ACCOUNT PREMIUM --------------------"
 
-	echo "                       DEVELOPED BY Inject69           "
+	echo "                       DEVELOPED BY CuCu_AtoK           "
 echo ""
 
 # begin of user-list
@@ -53,7 +53,7 @@ if [ $? -eq 0 ]; then
 clear
 	
 echo -e ""| lolcat
-echo -e "|       INFO NEW ACCOUNT      |" | boxes -d dog | lolcat
+echo -e "|       INFO NEW ACCOUNT      |" | boxes -d cat | lolcat
 echo -e "===========[[-SERVER PREMIUM-]]============" | lolcat
 echo -e "     Host: $MYIP" | lolcat
 echo -e "     Username: $username" | lolcat
