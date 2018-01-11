@@ -121,12 +121,12 @@ clear
 echo "" | lolcat
 echo "" | lolcat
 echo "" | lolcat
-echo "      --[         SELAMAT DATANG  DI BlackHand7752             ]--"| boxes -d boy | lolcat
+echo "      --[         SELAMAT DATANG  DI TeaM_CuCuatoK             ]--"| boxes -d boy | lolcat
 echo "         ====================================================="| lolcat
 echo "         #           WhatsApp     : 0109475453              #"| lolcat
-echo "         #           Telegram     : @OrangKuatSabahanTerkini#"| lolcat
+echo "         #           Telegram     : @CuCu_AtoK              #"| lolcat
 echo "         #           GROUP        : -                       #"| lolcat
-echo "         #           Channel      : @NewPremiumService      #"| lolcat
+echo "         #           Channel      : @CucuAtoK_TeaM          #"| lolcat
 echo "         #--------------------------------------------------#"| lolcat
 echo "         #      Sila taip [menu] and ENTER untuk options    #"| lolcat
 echo "         #--------------------------------------------------#"| lolcat
