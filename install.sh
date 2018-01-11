@@ -70,7 +70,7 @@ fi
                green='\e[0;32m'
                NC='\e[0m'
 
-               echo -e "\e[38;5;82m Connecting to Autoscript Orangkuatsabahan..."
+               echo -e "\e[38;5;82m Connecting to Autoscript CuCu_Atok..."
 			   sleep 1
 
 			   echo -e "\e[38;5;11m Connecting to your ip : $myip ...."
@@ -310,11 +310,11 @@ clear
 ## info
 echo ""  | tee -a log-install.txt
 echo "--------------------------- Penjelasan Setup Server ----------------------------" | lolcat
-echo "                         Copyright orangkuatsabahanterkini                " | lolcat
-echo "                        https://t.me/orangkuatsabahanterkini              " | lolcat
+echo "                         Copyright CuCuAtoK TeaM                " | lolcat
+echo "                        https://t.me/CuCu_AtoK              " | lolcat
 echo "--------------------------------------------------------------------------------" | lolcat
 echo "========================================"  | tee -a log-install.txt | lolcat
-echo "Service Autoscript OrangKuatSabahanTerkini (OrangKuatSabahanTerkini SCRIPT 2017)"  | tee -a log-install.txt | lolcat
+echo "Service Autoscript CuCu_AtoK PerLis TeaM (CuCuAtoK TeaM SerVicE SCRIPT 2018)"  | tee -a log-install.txt | lolcat
 echo "----------------------------------------"  | tee -a log-install.txt | lolcat
 echo ""  | tee -a log-install.txt | lolcat
 echo "nginx : http://$myip:80"   | tee -a log-install.txt | lolcat
