@@ -1,0 +1,45 @@
+#!/bin/bash
+
+if [[ $USER != "root" ]]; then
+	echo "Maaf, Anda harus menjalankan ini sebagai root"
+	exit
+fi
+
+# initialisasi var
+export DEBIAN_FRONTEND=noninteractive
+OS=`uname -m`;
+MYIP=$(wget -qO- ipv4.icanhazip.com);
+MYIP2="s/xxxxxxxxx/$MYIP/g";
+ether=`ifconfig | cut -c 1-8 | sort | uniq -u | grep venet0 | grep -v venet0:`
+if [[ $ether = "" ]]; then
+        ether=eth0
+fi
+
+# go to root
+cd
+
+echo ""
+echo -e "\e[38;5;6m     ========================================================="
+echo -e "\e[38;5;82m     *                 AUTOSCRIPT VPS ®2018                  *"
+echo -e "\e[38;5;6m     ========================================================="
+echo -e "\e[38;5;6m     *                     Contact Me                        *"
+echo -e "\e[38;5;6m     *                Channel: NewPremiumService             *"
+echo -e "\e[38;5;6m     *                Whatsapp: -                            *"
+echo -e "\e[38;5;6m     *                Telegram: @Cucu_atok                *"
+echo -e "\e[38;5;6m     ========================================================="
+echo -e "\e[38;5;6m     *                AUTOSCRIPT VPS ®2018                   *"
+echo -e "\e[38;5;6m     ========================================================="
+# check registered ip
+wget -q -O IP "https://atokcucu.arifcloud.cf/IP.txt"
+if ! grep -w -q $MYIP IP; then
+	echo -e "\e[38;5;196m Maaf Bro Hanya IP terdaftar sahaja yang boleh menggunakan Autoscript ini!!!" 
+	if [[ $vps = "zvur" ]]; then
+		echo -e "\e[38;5;226m PM Telagram: https://t.me/Cucu_atok untuk dapatkan harga diskaun kaw²\e[0m"
+	else
+		echo -e "\e[38;5;226m PM Telegram: https://t.me/Cucu_atok untuk dapatkan harga diskaun kaw²\e[0m"
+	fi
+	rm -f /root/IP
+	exit
+fi
+
+ # Start 
