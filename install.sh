@@ -50,7 +50,7 @@ echo "  ===================================================================="| l
 echo "  # 	                   CONTACT ME                             #"| lolcat
 echo "  #            TELEGRAM  :  https://t.me/Cucu_Atok                   #"| lolcat
 echo "  #               GROUP  :  https://                                 #"| lolcat
-echo "  #             CHANNEL  : @NewPremiumService                        #"| lolcat
+echo "  #             CHANNEL  :  @CuCuAtoK_TeaM                           #"| lolcat
 echo "  #------------------------------------------------------------------#"| lolcat
 echo "  ===================================================================="| lolcat
 # check registered ip
