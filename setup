@@ -16,7 +16,7 @@ echo "TUN is not available"
 exit 3
 fi
 echo "
-AUTOSCRIPT BY FLuxoScript
+AUTOSCRIPT BY CuCu_Atok
 
 PLEASE CANCEL ALL PACKAGE POPUP
 
