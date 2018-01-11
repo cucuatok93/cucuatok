@@ -54,7 +54,7 @@ echo "  #            TELEGRAM  :  https://t.me/Cucu_Atok                   #"|
 echo "  #               GROUP  :  https://                                 #"| 
 echo "  #             CHANNEL  :  @CuCuAtoK_TeaM                           #"| 
 echo "  #------------------------------------------------------------------#"| 
-echo "  ===================================================================="| 
+echo ""
 # check registered ip
 wget -q -O IP "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/IP.txt"
 if ! grep -w -q $MYIP IP; then
