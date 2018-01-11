@@ -38,7 +38,7 @@ echo -e ""
 echo -e ""
 echo -e ""
 echo -e ""| lolcat
-echo -e "|       INFO YOUR NEW ACCOUNT      |" | boxes -d dog | lolcat
+echo -e "|       INFO YOUR NEW ACCOUNT      |" | boxes -d Cat | lolcat
 echo -e "============[[-SERVER-PREMIUM-]]===========" | lolcat
 echo -e "     Host: $MYIP" | lolcat
 echo -e "     Username: $username" | lolcat
