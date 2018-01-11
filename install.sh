@@ -309,10 +309,10 @@ cd
 clear
 ## info
 echo ""  | tee -a log-install.txt
-echo "--------------------------- Penjelasan Setup Server ----------------------------" | lolcat
-echo "                         Copyright CuCuAtoK TeaM                " | lolcat
-echo "                        https://t.me/CuCu_AtoK              " | lolcat
-echo "--------------------------------------------------------------------------------" | lolcat
+echo "--------------------------- Penjelasan Setup Server -------------------------" | lolcat
+echo "                            Copyright CuCuAtoK TeaM                " | lolcat
+echo "                            https://t.me/CuCu_AtoK              " | lolcat
+echo "-----------------------------------------------------------------------------" | lolcat
 echo "========================================"  | tee -a log-install.txt | lolcat
 echo "Service Autoscript CuCu_AtoK PerLis TeaM (CuCuAtoK TeaM SerVicE SCRIPT 2018)"  | tee -a log-install.txt | lolcat
 echo "----------------------------------------"  | tee -a log-install.txt | lolcat
