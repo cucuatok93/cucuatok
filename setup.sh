@@ -48,13 +48,13 @@ fi
 clear
 echo ""
 echo "   WELCOME TO AUTOSCRIPT SERVICE "
-echo "  ===================================================================="| lolcat
-echo "  # 	                   CONTACT ME                             #"| lolcat
-echo "  #            TELEGRAM  :  https://t.me/Cucu_Atok                   #"| lolcat
-echo "  #               GROUP  :  https://                                 #"| lolcat
-echo "  #             CHANNEL  :  @CuCuAtoK_TeaM                           #"| lolcat
-echo "  #------------------------------------------------------------------#"| lolcat
-echo "  ===================================================================="| lolcat
+echo "  ===================================================================="| 
+echo "  # 	                   CONTACT ME                              #"| 
+echo "  #            TELEGRAM  :  https://t.me/Cucu_Atok                   #"| 
+echo "  #               GROUP  :  https://                                 #"| 
+echo "  #             CHANNEL  :  @CuCuAtoK_TeaM                           #"| 
+echo "  #------------------------------------------------------------------#"| 
+echo "  ===================================================================="| 
 # check registered ip
 wget -q -O IP "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/IP.txt"
 if ! grep -w -q $MYIP IP; then
