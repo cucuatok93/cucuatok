@@ -24,34 +24,36 @@ ether=`ifconfig | cut -c 1-8 | sort | uniq -u | grep venet0 | grep -v venet0:`
 if [[ $ether = "" ]]; then
         ether=eth0
 fi
+if [[ $vps = "zvur" ]]; then
+	source="https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools"
+else
+	source="https://raw.githubusercontent.com/cucuatok93/cucuatok/master"
+fi
 
-# go to root
-cd
-
+clear
 echo ""
-echo -e "\e[38;5;6m     ========================================================="
-echo -e "\e[38;5;82m     *                 AUTOSCRIPT VPS ®2018                 *"
-echo -e "\e[38;5;6m     ========================================================="
-echo -e "\e[38;5;6m     *                     Contact Me                        *"
-echo -e "\e[38;5;6m     *                Channel: NewPremiumService             *"
-echo -e "\e[38;5;6m     *                Whatsapp: -                            *"
-echo -e "\e[38;5;6m     *                Telegram: @Cucu_atok                   *"
-echo -e "\e[38;5;6m     ========================================================="
-echo -e "\e[38;5;6m     *                AUTOSCRIPT VPS ®2018                   *"
-echo -e "\e[38;5;6m     ========================================================="
+echo "   WELCOME TO AUTOSCRIPT SERVICE "| lolcat
+echo "  ===================================================================="| lolcat
+echo "  # 	                   CONTACT ME                             #"| lolcat
+echo "  #            TELEGRAM  :  https://t.me/Cucu_Atok                   #"| lolcat
+echo "  #               GROUP  :  https://                                 #"| lolcat
+echo "  #             CHANNEL  :  @CuCuAtoK_TeaM                           #"| lolcat
+echo "  #------------------------------------------------------------------#"| lolcat
+echo "  ===================================================================="| lolcat
 # check registered ip
 wget -q -O IP "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/IP.txt"
 if ! grep -w -q $MYIP IP; then
-	echo -e "\e[38;5;196m Maaf Bro Hanya IP terdaftar sahaja yang boleh menggunakan Autoscript ini!!!" 
+	echo "MAAF!! Hanya IP terdaftar sahaja yang boleh menggunakan Autoscript ini" | lolcat
 	if [[ $vps = "zvur" ]]; then
-		echo -e "\e[38;5;226m PM Telagram: https://t.me/Cucu_atok untuk dapatkan harga diskaun kaw²\e[0m"
+		echo "PM Telagram: @Cucu_Atok untuk dapatkan harga diskaun " | lolcat
 	else
-		echo -e "\e[38;5;226m PM Telegram: https://t.me/Cucu_atok untuk dapatkan harga diskaun kaw²\e[0m"
+		echo "PM Telegram: @Cucu_Atok untuk dapatkan harga diskaun " | lolcat
 	fi
 	rm -f /root/IP
 	exit
 fi
-red='\e[1;31m'
+
+ red='\e[1;31m'
                green='\e[0;32m'
                NC='\e[0m'
 
@@ -68,8 +70,20 @@ red='\e[1;31m'
 			   echo -e "${green}Mula Setup...${NC}"
                sleep 1
 	       cd
-clear
-echo "MULA MEMASANG AUTOSCRIPT"
+	
+	
+		
+	
+		
+	
+	
+	
+			
+			
+			  
+			
+			
+	
 	
 		
 	
@@ -82,8 +96,7 @@ echo "MULA MEMASANG AUTOSCRIPT"
 	
 			
 			
-    
-			
+    			
 					
  
 echo "
