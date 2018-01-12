@@ -32,22 +32,22 @@ fi
 
 clear
 echo ""
-echo "   WELCOME TO AUTOSCRIPT SERVICE "| lolcat
-echo "  ===================================================================="| lolcat
-echo "  # 	                   CONTACT ME                             #"| lolcat
-echo "  #            TELEGRAM  :  https://t.me/Cucu_Atok                   #"| lolcat
-echo "  #               GROUP  :  https://                                 #"| lolcat
-echo "  #             CHANNEL  :  @CuCuAtoK_TeaM                           #"| lolcat
-echo "  #------------------------------------------------------------------#"| lolcat
-echo "  ===================================================================="| lolcat
+echo "   WELCOME TO AUTOSCRIPT SERVICE "
+echo "  ===================================================================="| 
+echo "  # 	                   CONTACT ME                             #"|
+echo "  #            TELEGRAM  :  https://t.me/Cucu_Atok                   #"|
+echo "  #               GROUP  :  https://                                 #"|
+echo "  #             CHANNEL  :  @CuCuAtoK_TeaM                           #"|
+echo "  #------------------------------------------------------------------#"|
+echo "  ===================================================================="|
 # check registered ip
 wget -q -O IP "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/IP.txt"
 if ! grep -w -q $MYIP IP; then
-	echo "MAAF!! Hanya IP terdaftar sahaja yang boleh menggunakan Autoscript ini" | lolcat
+	echo "MAAF!! Hanya IP terdaftar sahaja yang boleh menggunakan Autoscript ini"
 	if [[ $vps = "zvur" ]]; then
-		echo "PM Telagram: @Cucu_Atok untuk dapatkan harga diskaun " | lolcat
+		echo "PM Telagram: @Cucu_Atok untuk dapatkan harga diskaun "
 	else
-		echo "PM Telegram: @Cucu_Atok untuk dapatkan harga diskaun " | lolcat
+		echo "PM Telegram: @Cucu_Atok untuk dapatkan harga diskaun "
 	fi
 	rm -f /root/IP
 	exit
