@@ -22,30 +22,43 @@ ether=`ifconfig | cut -c 1-8 | sort | uniq -u | grep venet0 | grep -v venet0:`
 if [[ $ether = "" ]]; then
         ether=eth0
 fi
+# initialisasi var
+export DEBIAN_FRONTEND=noninteractive
+OS=`uname -m`;
+MYIP=$(wget -qO- ipv4.icanhazip.com);
+MYIP2="s/xxxxxxxxx/$MYIP/g";
+ether=`ifconfig | cut -c 1-8 | sort | uniq -u | grep venet0 | grep -v venet0:`
+if [[ $ether = "" ]]; then
+        ether=eth0
+
+if [[ $vps = "zvur" ]]; then
+	source="https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools"
+else
+	source="https://raw.githubusercontent.com/cucuatok93/cucuatok/master"
+fi
 
 # go to root
 cd
 
 echo ""
 echo -e "\e[38;5;6m     ========================================================="
-echo -e "\e[38;5;82m     *               AUTOSCRIPT VPS DARI CUCUATOK            *"
+echo -e "\e[38;5;82m    *                AUTOSCRIPT VPS DARI CUCUATOK           *"
 echo -e "\e[38;5;6m     ========================================================="
 echo -e "\e[38;5;6m     *                     Contact Me                        *"
-echo -e "\e[38;5;6m     *                Channel: CuCUatoK_TeaM                 *"
+echo -e "\e[38;5;6m     *                Channel: Cucucatok_TeaM                *"
 echo -e "\e[38;5;6m     *                Whatsapp: -                            *"
 echo -e "\e[38;5;6m     *                Telegram: @Cucu_atok                   *"
 echo -e "\e[38;5;6m     ========================================================="
-echo -e "\e[38;5;6m     *          AUTOSCRIPT VPS DARI KAMI TEAM CUCUATOK       *"
+echo -e "\e[38;5;6m     *                AUTOSCRIPT VPS 2018                    *"
 echo -e "\e[38;5;6m     ========================================================="
-
 # check registered ip
 wget -q -O IP "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/IP.txt"
 if ! grep -w -q $MYIP IP; then
-	echo "MAAF!! Hanya IP terdaftar sahaja yang boleh menggunakan Autoscript ini"
+	echo "MAAF!! Hanya IP terdaftar sahaja yang boleh menggunakan Autoscript ini" | lolcat
 	if [[ $vps = "zvur" ]]; then
-		echo "PM Telagram: @Cucu_Atok untuk dapatkan harga diskaun "
+		echo "PM Telagram: @Cucu_Atok untuk dapatkan harga diskaun " | lolcat
 	else
-		echo "PM Telegram: @Cucu_Atok untuk dapatkan harga diskaun "
+		echo "PM Telegram: @Cucu_Atok untuk dapatkan harga diskaun " | lolcat
 	fi
 	rm -f /root/IP
 	exit
@@ -62,7 +75,7 @@ fi
                sleep 2
                           echo -e "\e[38;5;13m Proses ini akan mengambil masa 10-15 minit"
 		sleep 2.5	  
-			   echo -e "\e[38;5;226m IP ANDA Berjaya Di Daftarkan..."
+			   echo -e "\e[38;5;226m IP ANDA erjaya Di Daftarkan..."
                sleep 1.5
                
 			   echo -e "${green}Mula Setup...${NC}"
@@ -280,6 +293,23 @@ chmod +x /usr/bin/user-pass
 chmod +x /usr/bin/user-renew
 chmod +x /usr/bin/clearcache.sh
 chmod +x /usr/bin/bannermenu
+red='\e[1;31m'
+               green='\e[0;32m'
+               NC='\e[0m'
+
+               echo -e "\e[38;5;82m Connecting to VPS ANDA..."
+			   sleep 1
+
+			   echo -e "\e[38;5;11m JOM KITA KIRA...."
+               sleep 2
+                          echo -e "\e[38;5;13m Proses kiraan 3"
+		sleep 2.5	  
+			   echo -e "\e[38;5;226m proses kiraan 2..."
+               sleep 1.5
+               
+			   echo -e "${green}proses kiraan 1 go go go${NC}"
+               sleep 1
+	  
 cd
 # restart service
 service ssh restart
@@ -290,24 +320,6 @@ service php7.0-fpm restart
 service webmin restart
 service squid restart
 service fail2ban restart
-cd
-red='\e[1;31m'
-               green='\e[0;32m'
-               NC='\e[0m'
-
-               echo -e "\e[38;5;82m KAMI TENGAH BUAT KIRAAN VPS ANDA..."
-			   sleep 1
-
-			   echo -e "\e[38;5;11m DALAM KIRAAN 3...."
-               sleep 2
-                          echo -e "\e[38;5;13m DALAM KIRAAN 2"
-		sleep 2.5	  
-			   echo -e "\e[38;5;226m DALAM KIRAAN 1..."
-               sleep 1.5
-               
-			   echo -e "${green}SUDAH BERJAYA...${NC}"
-               sleep 1
-	     
 cd
 clear
 ## info
