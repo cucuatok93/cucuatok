@@ -320,7 +320,7 @@ Port dropbear tidak boleh sama dengan port openVPN/openSSH/squid3 !!!"| boxes -d
 	 ;;
 	"Install OpenVpn")
 	clear
-	wget https://atokcucu.arifcloud.cf/tools/v.p.n
+	wget https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools/v.p.n
 	chmod +x v.p.n
 	./v.p.n
 	break
