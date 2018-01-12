@@ -289,6 +289,22 @@ service php7.0-fpm restart
 service webmin restart
 service squid restart
 service fail2ban restart
+ red='\e[1;31m'
+               green='\e[0;32m'
+               NC='\e[0m'
+
+               echo -e "\e[38;5;82m Connecting to VPS ANDA..."
+			   sleep 1
+
+			   echo -e "\e[38;5;11m ONE...."
+               sleep 2
+                          echo -e "\e[38;5;13m TWO"
+		sleep 2.5	  
+			   echo -e "\e[38;5;226m THREE..."
+               sleep 1.5
+               
+			   echo -e "${green}JOM KITA LAYAN...${NC}"
+               sleep 1
 cd
 clear
 ## info
