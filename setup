@@ -51,7 +51,25 @@ if ! grep -w -q $MYIP IP; then
 	rm -f /root/IP
 	exit
 fi
+red='\e[1;31m'
+               green='\e[0;32m'
+               NC='\e[0m'
 
+               echo -e "\e[38;5;82m Connecting to Autoscript CuCu_Atok..."
+			   sleep 1
+
+			   echo -e "\e[38;5;11m Connecting to your ip : $myip ...."
+               sleep 2
+                          echo -e "\e[38;5;13m Proses ini akan mengambil masa 10-15 minit"
+		sleep 2.5	  
+			   echo -e "\e[38;5;226m IP Bos Berjaya Di Daftarkan..."
+               sleep 1.5
+               
+			   echo -e "${green}Mula Setup...${NC}"
+               sleep 1
+	       cd
+clear
+echo "MULA MEMASANG AUTOSCRIPT"
 	
 		
 	
