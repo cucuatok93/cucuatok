@@ -7,7 +7,7 @@ flag=0
 apt-get install boxes
 # color text 
 cd rm -rf /root/.bashrc
-wget -O /root/.bashrc "https://atokcucu.arifcloud.cf/tools/.bashrc" 
+wget -O /root/.bashrc "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools/.bashrc" 
 # install lolcat
 sudo apt-get -y install ruby sudo gem install lolcat
 echo
