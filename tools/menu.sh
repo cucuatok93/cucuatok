@@ -158,7 +158,7 @@ User Sudah Boleh Multi Login Lagi!!!" | boxes -d boy | lolcat
 	;;
 	"User Active List")
 	clear
-	user-active-list | boxes -d dog | lolcat
+	user-active-list | boxes -d cat | lolcat
 	break
 	;;
 	"User Expired")
@@ -188,7 +188,7 @@ User Sudah Boleh Multi Login Lagi!!!" | boxes -d boy | lolcat
 	;;
 	"Status Ram")
 	clear
-	ps-mem | boxes -d dog | lolcat
+	ps-mem | boxes -d cat | lolcat
 	break
 	;;
 	"Speedtest")
@@ -287,7 +287,7 @@ Port dropbear tidak boleh sama dengan port openVPN/openSSH/squid3 !!!"| boxes -d
 	 ;;
 	 "Change Port Squid3")
 	 clear
-	 echo "Sila tukar  port Squid3 anda and Press Enter"| boxes -d dog | lolcat
+	 echo "Sila tukar  port Squid3 anda and Press Enter"| boxes -d cat | lolcat
 	    echo "please Fill with Number Not Alphabet !!!"| lolcat
 	    echo -e "Port Squid3 1: 8080"
 	    read -p "Port Squid3 2: " -e -i 3128 PORT
