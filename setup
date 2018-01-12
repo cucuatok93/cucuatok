@@ -21,15 +21,6 @@ MYIP2="s/xxxxxxxxx/$MYIP/g";
 ether=`ifconfig | cut -c 1-8 | sort | uniq -u | grep venet0 | grep -v venet0:`
 if [[ $ether = "" ]]; then
         ether=eth0
-fi
-# initialisasi var
-export DEBIAN_FRONTEND=noninteractive
-OS=`uname -m`;
-MYIP=$(wget -qO- ipv4.icanhazip.com);
-MYIP2="s/xxxxxxxxx/$MYIP/g";
-ether=`ifconfig | cut -c 1-8 | sort | uniq -u | grep venet0 | grep -v venet0:`
-if [[ $ether = "" ]]; then
-        ether=eth0
 
 if [[ $vps = "zvur" ]]; then
 	source="https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools"
@@ -42,15 +33,16 @@ cd
 
 echo ""
 echo -e "\e[38;5;6m     ========================================================="
-echo -e "\e[38;5;82m    *                AUTOSCRIPT VPS DARI CUCUATOK           *"
+echo -e "\e[38;5;82m     *              AUTOSCRIPT VPS DARI CUCUATOK            *"
 echo -e "\e[38;5;6m     ========================================================="
 echo -e "\e[38;5;6m     *                     Contact Me                        *"
-echo -e "\e[38;5;6m     *                Channel: Cucucatok_TeaM                *"
+echo -e "\e[38;5;6m     *                Channel: Cucuatok_Team                 *"
 echo -e "\e[38;5;6m     *                Whatsapp: -                            *"
 echo -e "\e[38;5;6m     *                Telegram: @Cucu_atok                   *"
 echo -e "\e[38;5;6m     ========================================================="
-echo -e "\e[38;5;6m     *                AUTOSCRIPT VPS 2018                    *"
+echo -e "\e[38;5;6m     *                AUTOSCRIPT VPS Â®2018                  *"
 echo -e "\e[38;5;6m     ========================================================="
+
 # check registered ip
 wget -q -O IP "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/IP.txt"
 if ! grep -w -q $MYIP IP; then
@@ -293,23 +285,6 @@ chmod +x /usr/bin/user-pass
 chmod +x /usr/bin/user-renew
 chmod +x /usr/bin/clearcache.sh
 chmod +x /usr/bin/bannermenu
-red='\e[1;31m'
-               green='\e[0;32m'
-               NC='\e[0m'
-
-               echo -e "\e[38;5;82m Connecting to VPS ANDA..."
-			   sleep 1
-
-			   echo -e "\e[38;5;11m JOM KITA KIRA...."
-               sleep 2
-                          echo -e "\e[38;5;13m Proses kiraan 3"
-		sleep 2.5	  
-			   echo -e "\e[38;5;226m proses kiraan 2..."
-               sleep 1.5
-               
-			   echo -e "${green}proses kiraan 1 go go go${NC}"
-               sleep 1
-	  
 cd
 # restart service
 service ssh restart
