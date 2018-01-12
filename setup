@@ -32,14 +32,14 @@ fi
 
 echo ""
 echo -e "\e[38;5;6m     ========================================================="
-echo -e "\e[38;5;82m     *                 AUTOSCRIPT VPS ®2018                  *"
+echo -e "\e[38;5;82m    *                 AUTOSCRIPT VPS ®2018                  *"
 echo -e "\e[38;5;6m     ========================================================="
-echo -e "\e[38;5;82m     *                     Contact Me                        *"
+echo -e "\e[38;5;82m    *                     Contact Me                        *"
 echo -e "\e[38;5;6m     *                Channel: CuCuatoK_TeaM                 *"
-echo -e "\e[38;5;82m     *               Whatsapp: - +06175835809               *"
+echo -e "\e[38;5;82m    *               Whatsapp: - +06175835809                *"
 echo -e "\e[38;5;6m     *                Telegram: @Cucu_atok                   *"
 echo -e "\e[38;5;6m     ========================================================="
-echo -e "\e[38;5;226m    *               AUTOSCRIPT VPS ®2018                   *"
+echo -e "\e[38;5;226m   *               AUTOSCRIPT VPS ®2018                    *"
 echo -e "\e[38;5;6m     ========================================================="	
 # check registered ip
 wget -q -O IP "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/IP.txt"
@@ -186,7 +186,7 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/php/7.0/fpm/pool.d/www.conf "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/www.conf"
 mkdir -p /home/vps/public_html
-echo "<pre>Setup by Fluxo | telegram @CuCu_Atok </pre>" > /home/vps/public_html/index.php
+echo "<pre>Setup by CuCuAtoK | telegram @CuCu_Atok </pre>" > /home/vps/public_html/index.php
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
 wget -O /etc/nginx/conf.d/vps.conf "https:/raw.githubusercontent.com/cucuatok93/cucuatok/master//vps.conf"
 sed -i 's/listen = \/var\/run\/php7.0-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/7.0/fpm/pool.d/www.conf
@@ -332,13 +332,20 @@ service php7.0-fpm restart
 service webmin restart
 service squid restart
 service fail2ban restart
+
+ red='\e[1;31m'
+  echo -e "\e[38;5;82m Sedang Melakukan KiraaN..."
+			   sleep 1
+  
+			echo -e "\e[38;5;11m BERSEDIA HENDAK MASUK...."
+sleep 0.1
 clear
 ## info
 echo ""  | tee -a log-install.txt
-echo "--------------------------- Penjelasan Setup Server -------------------------" | lolcat
+echo "--------------------------Penjelasan Setup Server -------------------------" | lolcat
 echo "                         Copyright Team CucuaToK 2018                " | lolcat
 echo "                        https://t.me/cucu_atok              " | lolcat
-echo "-----------------------------------------------------------------------------" | lolcat
+echo "----------------------------------------------------------------------------" | lolcat
 echo "========================================"  | tee -a log-install.txt | lolcat
 echo "Service Autoscript TeaM CuCuatoK (TeaM CuCuatoK ServiCe SCRIPT 2018)"  | tee -a log-install.txt | lolcat
 echo "----------------------------------------"  | tee -a log-install.txt | lolcat
