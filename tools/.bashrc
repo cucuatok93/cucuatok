@@ -121,9 +121,9 @@ clear
 echo "" | lolcat
 echo "" | lolcat
 echo "" | lolcat
-echo "      --[         SELAMAT DATANG  DI TeaM_CuCuatoK             ]--"| boxes -d boy | lolcat
+echo "      --[         SELAMAT DATANG  DI TeaM_CuCuatoK             ]--"| boxes -d Peak | lolcat
 echo "         ====================================================="| lolcat
-echo "         #           WhatsApp     : 0109475453              #"| lolcat
+echo "         #           WhatsApp     : +60175835809            #"| lolcat
 echo "         #           Telegram     : @CuCu_AtoK              #"| lolcat
 echo "         #           GROUP        : -                       #"| lolcat
 echo "         #           Channel      : @CucuAtoK_TeaM          #"| lolcat
