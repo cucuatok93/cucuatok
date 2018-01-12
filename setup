@@ -21,22 +21,7 @@ MYIP2="s/xxxxxxxxx/$MYIP/g";
 ether=`ifconfig | cut -c 1-8 | sort | uniq -u | grep venet0 | grep -v venet0:`
 if [[ $ether = "" ]]; then
         ether=eth0
-fi
-# Install lolcat
-apt-get install bc -y
-apt-get install xfonts-thai* -y
-apt-get install figlet
-apt-get install ruby -y
-apt-get install unzip
-wget https://github.com/busyloop/lolcat/archive/master.zip
-cd lolcat-master/bin
-gem install lolcat
-cd
-rm -r lolcat-master
-rm master.zip
-#vps="zvur";
-vps="aneka";
-
+	
 if [[ $vps = "zvur" ]]; then
 	source="https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools"
 else
@@ -62,11 +47,11 @@ echo -e "\e[38;5;6m     ========================================================
 # check registered ip
 wget -q -O IP "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/IP.txt"
 if ! grep -w -q $MYIP IP; then
-	echo "MAAF!! Hanya IP terdaftar sahaja yang boleh menggunakan Autoscript ini" | lolcat
+	echo "MAAF!! Hanya IP terdaftar sahaja yang boleh menggunakan Autoscript ini"
 	if [[ $vps = "zvur" ]]; then
-		echo "PM Telagram: @Cucu_Atok untuk dapatkan harga diskaun " | lolcat
+		echo "PM Telagram: @Cucu_Atok untuk dapatkan harga diskaun "
 	else
-		echo "PM Telegram: @Cucu_Atok untuk dapatkan harga diskaun " | lolcat
+		echo "PM Telegram: @Cucu_Atok untuk dapatkan harga diskaun "
 	fi
 	rm -f /root/IP
 	exit
