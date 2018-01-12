@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# START SCRIPT (CuCu_AtoK)
+myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
+myint=`ifconfig | grep -B1 "inet addr:$myip" | head -n1 | awk '{print $1}'`;
+if [ $USER != 'root' ]; then
+echo "Sorry, for run the script please using root user"
+exit 1
+fi
+
 if [[ $USER != "root" ]]; then
 	echo "Maaf, Anda harus menjalankan ini sebagai root"
 	exit
@@ -30,13 +38,13 @@ echo -e "\e[38;5;6m     ========================================================
 echo -e "\e[38;5;6m     *                AUTOSCRIPT VPS ®2018                   *"
 echo -e "\e[38;5;6m     ========================================================="
 # check registered ip
-wget -q -O IP "https://atokcucuraw.githubusercontent.com/cucuatok93/cucuatok/master/IP.txt"
+wget -q -O IP "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/IP.txt"
 if ! grep -w -q $MYIP IP; then
-	echo -e "\e[38;5;196m Maaf Bro Hanya IP terdaftar sahaja yang boleh menggunakan Autoscript ini!!!" 
+	echo "MAAF!! Hanya IP terdaftar sahaja yang boleh menggunakan Autoscript ini" | lolcat
 	if [[ $vps = "zvur" ]]; then
-		echo -e "\e[38;5;226m PM Telagram: https://t.me/Cucu_atok untuk dapatkan harga diskaun kaw²\e[0m"
+		echo "PM Telagram: @Cucu_Atok untuk dapatkan harga diskaun " | lolcat
 	else
-		echo -e "\e[38;5;226m PM Telegram: https://t.me/Cucu_atok untuk dapatkan harga diskaun kaw²\e[0m"
+		echo "PM Telegram: @Cucu_Atok untuk dapatkan harga diskaun " | lolcat
 	fi
 	rm -f /root/IP
 	exit
