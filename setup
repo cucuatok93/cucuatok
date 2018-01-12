@@ -11,6 +11,9 @@ if [[ "$EUID" -ne 0 ]]; then
 echo "Sorry, you need to run this as root"
 exit 2
 fi
+if [[ $USER != "root" ]]; then
+	echo "Maaf, Anda harus menjalankan ini sebagai root"
+	exit
 if [[ ! -e /dev/net/tun ]]; then
 echo "TUN is not available"
 exit 3
