@@ -68,9 +68,9 @@ echo -e "     Expired Date : $(date -d "$AKTIF days" +"%d-%m-%Y")" | lolcat
 echo -e "===========================================" | lolcat
 echo -e "   WARNING BAN FOR:                              "| lolcat
 echo -e "   HACKING-DDOS-PHISING-SPAM-TORENT        " | lolcat
-echo -e "   CARDING-CRIMINAL CYBER.                 "| lolcat
+echo -e "   CARDING-TEAM CCK.                 "| lolcat
 echo -e "===========================================" | lolcat
-echo -e "   Script by inject69              "| lolcat
+echo -e "   Script by cucuatok              "| lolcat
 echo -e "   Config OVPN:                            "| lolcat
 echo -e "   http://$MYIP:81/client.tar        " | lolcat
 echo -e "-------------------------------------------" | lolcat
