@@ -82,7 +82,7 @@ fi
                sleep 2
                           echo -e "\e[38;5;13m Proses ini akan mengambil masa 10-15 minit"
 		sleep 2.5	  
-			   echo -e "\e[38;5;226m IP ANDA erjaya Di Daftarkan..."
+			   echo -e "\e[38;5;226m IP ANDA Berjaya Di Daftarkan..."
                sleep 1.5
                
 			   echo -e "${green}Mula Setup...${NC}"
