@@ -23,8 +23,11 @@ useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$pass\n$pass\n"|passwd $uname &> /dev/null
 echo -e ""| lolcat
-echo -e "|      Informasi Akun Baru SSH      |" | boxes -d dog | lolcat
-echo -e "============-MuLuu09-============" | lolcat
+echo "                      _\|/_      "| lolcat
+echo "                      (o o)      "| lolcat
+echo "-------------------o00-{_}-00o---"| lolcat
+echo -e "|      Informasi Akun Baru SSH      |" | lolcat
+echo -e "============-Team CucuatoK-============" | lolcat
 echo -e "     Host: $myip" | lolcat
 echo -e "     Username: $uname" | lolcat
 echo -e "     Password: $pass                     " | lolcat
@@ -226,7 +229,11 @@ echo "" | lolcat
 echo "" | lolcat
 echo "" | lolcat
 echo "" | lolcat
-echo "        ----[SELAMAT DATANG DI VPS CuCu_AtoK  - ]---"| boxes -d cat | lolcat
+echo "                      _\|/_      "| lolcat
+
+
+
+echo "        ----[SELAMAT DATANG DI VPS CuCu_AtoK  - ]---"| lolcat
 echo "        ====================================================="| lolcat
 echo "        #           WhatsApp     : +60175835809            #"| lolcat
 echo "        #           Telegram     : @cucu_atok                 #"| lolcat
