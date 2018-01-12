@@ -36,6 +36,6 @@ echo "-----------------------------------"
 echo ""
 echo "------------------------------------"
 
-echo "      DEVELOPED BY inject69"
+echo "      DEVELOPED BY CuCu_AtoK"
 echo "------------------------------------"
 echo ""
