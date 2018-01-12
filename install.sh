@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# START SCRIPT (FLuxoScript)
+# START SCRIPT (CuCu_AtoK)
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 myint=`ifconfig | grep -B1 "inet addr:$myip" | head -n1 | awk '{print $1}'`;
 if [ $USER != 'root' ]; then
@@ -45,7 +45,7 @@ fi
 
 clear
 echo ""
-echo "              WELCOME TO AUTOSCRIPT SERVICE "| lolcat
+echo "              WELCOME TO AUTOSCRIPT SERVICE "| boxes -d Cat | lolcat
 echo "  ===================================================================="| lolcat
 echo "  # 	                   CONTACT ME                              #"| lolcat
 echo "  #            TELEGRAM  :  https://t.me/Cucu_Atok                   #"| lolcat
@@ -77,7 +77,7 @@ fi
                sleep 2
                           echo -e "\e[38;5;13m Proses ini akan mengambil masa 10-15 minit"
 		sleep 2.5	  
-			   echo -e "\e[38;5;226m IP Bos Berjaya Di Daftarkan..."
+			   echo -e "\e[38;5;226m IP ANDA erjaya Di Daftarkan..."
                sleep 1.5
                
 			   echo -e "${green}Mula Setup...${NC}"
@@ -310,8 +310,8 @@ clear
 ## info
 echo ""  | tee -a log-install.txt
 echo "--------------------------- Penjelasan Setup Server -------------------------" | lolcat
-echo "                            Copyright CuCuAtoK TeaM                " | lolcat
-echo "                            https://t.me/CuCu_AtoK              " | lolcat
+echo "                            Copyright CuCuAtoK TeaM                          " | lolcat
+echo "                            https://t.me/CuCu_AtoK                           " | lolcat
 echo "-----------------------------------------------------------------------------" | lolcat
 echo "========================================"  | tee -a log-install.txt | lolcat
 echo "Service Autoscript CuCu_AtoK PerLis TeaM (CuCuAtoK TeaM SerVicE SCRIPT 2018)"  | tee -a log-install.txt | lolcat
