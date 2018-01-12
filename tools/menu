@@ -321,11 +321,11 @@ do
 	break
 	;;
 		"User Belum Kadaluarsa")
-			not_expired_users | boxes -d dog | lolcat
+			not_expired_users | boxes -d cat | lolcat
 			break
 			;;
 		"User Sudah Kadaluarsa")
-			expired_users | boxes -d dog | lolcat
+			expired_users | boxes -d cat | lolcat
 			break
 			;;		
 		"Restart Server")
