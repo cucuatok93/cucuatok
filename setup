@@ -36,17 +36,17 @@ echo -e "\e[38;5;82m     *                 AUTOSCRIPT VPS ®2018                
 echo -e "\e[38;5;6m     ========================================================="
 echo -e "\e[38;5;82m     *                     Contact Me                        *"
 echo -e "\e[38;5;6m     *                Channel: CuCuatoK_TeaM                 *"
-echo -e "\e[38;5;82m     *                Whatsapp: -                            *"
+echo -e "\e[38;5;82m     *               Whatsapp: - +06175835809               *"
 echo -e "\e[38;5;6m     *                Telegram: @Cucu_atok                   *"
 echo -e "\e[38;5;6m     ========================================================="
-echo -e "\e[38;5;82m     *                AUTOSCRIPT VPS ®2018                   *"
+echo -e "\e[38;5;226m    *               AUTOSCRIPT VPS ®2018                   *"
 echo -e "\e[38;5;6m     ========================================================="	
 # check registered ip
 wget -q -O IP "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/IP.txt"
 if ! grep -w -q $MYIP IP; then
 	echo "MAAF!! Hanya IP terdaftar sahaja yang boleh menggunakan Autoscript ini"
 	if [[ $vps = "zvur" ]]; then
-		echo "PM Telagram: @Cucu_Atok untuk dapatkan harga diskaun "
+		echo "PM Telagram: @Cucu_Ato_Sila Rujuk kepada admin Team"
 	else
 		echo "PM Telegram: @Cucu_Atok untuk dapatkan harga diskaun "
 	fi
@@ -58,14 +58,14 @@ fi
                green='\e[0;32m'
                NC='\e[0m'
 
-               echo -e "\e[38;5;82m Connecting to Autoscript CuCu_Atok..."
+               echo -e "\e[38;5;82m Sedang Connecting to Autoscript CuCu_Atok..."
 			   sleep 1
 
 			   echo -e "\e[38;5;11m Connecting to your ip : $myip ...."
                sleep 2
                           echo -e "\e[38;5;13m Proses ini akan mengambil masa 10-15 minit"
 		sleep 2.5	  
-			   echo -e "\e[38;5;226m IP Bos Berjaya Di Daftarkan..."
+			   echo -e "\e[38;5;226m IP Anda Berjaya Di Daftarkan..."
                sleep 1.5
                
 			   echo -e "${green}Mula Setup...${NC}"
@@ -335,10 +335,10 @@ service fail2ban restart
 clear
 ## info
 echo ""  | tee -a log-install.txt
-echo "--------------------------- Penjelasan Setup Server ----------------------------" | lolcat
+echo "--------------------------- Penjelasan Setup Server -------------------------" | lolcat
 echo "                         Copyright Team CucuaToK 2018                " | lolcat
 echo "                        https://t.me/cucu_atok              " | lolcat
-echo "--------------------------------------------------------------------------------" | lolcat
+echo "-----------------------------------------------------------------------------" | lolcat
 echo "========================================"  | tee -a log-install.txt | lolcat
 echo "Service Autoscript TeaM CuCuatoK (TeaM CuCuatoK ServiCe SCRIPT 2018)"  | tee -a log-install.txt | lolcat
 echo "----------------------------------------"  | tee -a log-install.txt | lolcat
