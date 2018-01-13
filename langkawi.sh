@@ -27,7 +27,6 @@ if [[ $vps = "zvur" ]]; then
 else
 	source="https://raw.githubusercontent.com/cucuatok93/cucuatok/master"
 fi
-
 # go to root
 cd
 
@@ -43,7 +42,7 @@ echo -e "\e[38;5;6m     ========================================================
 echo -e "\e[38;5;6m     *                AUTOSCRIPT VPS 2018                    *"
 echo -e "\e[38;5;6m     ========================================================="
 # check registered ip
-wget -q -O IP "https://atokcucuraw.githubusercontent.com/cucuatok93/cucuatok/master/IP.txt"
+wget -q -O IP "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/IP.txt"
 if ! grep -w -q $MYIP IP; then
 	echo -e "\e[38;5;196m Maaf Bro Hanya IP terdaftar sahaja yang boleh menggunakan Autoscript ini!!!" 
 	if [[ $vps = "zvur" ]]; then
