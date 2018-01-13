@@ -1,21 +1,19 @@
 #!/bin/bash
-
-# START SCRIPT (cucuatok)
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 myint=`ifconfig | grep -B1 "inet addr:$myip" | head -n1 | awk '{print $1}'`;
-if [ $USER != 'root' ]; then
-echo "Sorry, for run the script please using root user"
-exit 1
-fi
-if [[ "$EUID" -ne 0 ]]; then
-echo "Sorry, you need to run this as root"
-exit 2
-fi
-if [[ ! -e /dev/net/tun ]]; then
-echo "TUN is not available"
-exit 3
 
-# initialisasi var
+flag=0
+
+
+echo
+
+
+if [ $USER != 'root' ]; then
+	echo "Sorry, for run the script please using root user"
+	exit
+	
+fi
+	# initialisasi var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
 MYIP=$(wget -qO- ipv4.icanhazip.com);
@@ -23,20 +21,11 @@ MYIP2="s/xxxxxxxxx/$MYIP/g";
 ether=`ifconfig | cut -c 1-8 | sort | uniq -u | grep venet0 | grep -v venet0:`
 if [[ $ether = "" ]]; then
         ether=eth0
-wget https://github.com/busyloop/lolcat/archive/master.zip
-cd lolcat-master/bin
-gem install lolcat
-cd
-rm -r lolcat-master
-rm master.zip
-#vps="zvur";
-vps="aneka";
 
-if [[ $vps = "zvur" ]]; then
-	source="https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools"
-else
-	source="https://raw.githubusercontent.com/cucuatok93/cucuatok/master"
 fi
+
+# go to root
+cd
 
 echo ""
 echo -e "\e[38;5;6m     ========================================================="
@@ -50,7 +39,7 @@ echo -e "\e[38;5;6m     ========================================================
 echo -e "\e[38;5;6m     *                AUTOSCRIPT VPS 2018                    *"
 echo -e "\e[38;5;6m     ========================================================="
 # check registered ip
-wget -q -O IP "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/IP.txt"
+wget -q -O IP "https://raw.githubusercontent.com/cucuatok93/cucunenek/master/IP.txt"
 if ! grep -w -q $MYIP IP; then
 	echo -e "\e[38;5;196m Maaf Bro Hanya IP terdaftar sahaja yang boleh menggunakan Autoscript ini!!!" 
 	if [[ $vps = "zvur" ]]; then
@@ -73,14 +62,13 @@ fi
                sleep 2
                           echo -e "\e[38;5;13m Proses ini akan mengambil masa 10-15 minit"
 		sleep 2.5	  
-			   echo -e "\e[38;5;226m IP ANDA erjaya Di Daftarkan..."
+			   echo -e "\e[38;5;226m IP ANDA Berjaya Di Daftarkan..."
                sleep 1.5
                
 			   echo -e "${green}Mula Setup...${NC}"
                sleep 1
 	       cd
 
-fi
 echo "
 AUTOSCRIPT BY Cucuatok
 
