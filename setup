@@ -15,6 +15,23 @@ if [[ ! -e /dev/net/tun ]]; then
 echo "TUN is not available"
 exit 3
 
+# initialisasi var
+export DEBIAN_FRONTEND=noninteractive
+OS=`uname -m`;
+MYIP=$(wget -qO- ipv4.icanhazip.com);
+MYIP2="s/xxxxxxxxx/$MYIP/g";
+ether=`ifconfig | cut -c 1-8 | sort | uniq -u | grep venet0 | grep -v venet0:`
+if [[ $ether = "" ]]; then
+        ether=eth0
+wget https://github.com/busyloop/lolcat/archive/master.zip
+cd lolcat-master/bin
+gem install lolcat
+cd
+rm -r lolcat-master
+rm master.zip
+#vps="zvur";
+vps="aneka";
+
 if [[ $vps = "zvur" ]]; then
 	source="https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools"
 else
@@ -299,10 +316,10 @@ service fail2ban restart
 clear
 ## info
 echo ""  | tee -a log-install.txt
-echo "--------------------------- Penjelasan Setup Server ----------------------------" | lolcat
+echo "--------------------------- Penjelasan Setup Server -------------------------" | lolcat
 echo "                         Copyright Team CucuaToK 2018                " | lolcat
 echo "                        https://t.me/cucu_atok              " | lolcat
-echo "--------------------------------------------------------------------------------" | lolcat
+echo "-----------------------------------------------------------------------------" | lolcat
 echo "========================================"  | tee -a log-install.txt | lolcat
 echo "Service Autoscript TeaM CuCuatoK (TeaM CuCuatoK ServiCe SCRIPT 2018)"  | tee -a log-install.txt | lolcat
 echo "----------------------------------------"  | tee -a log-install.txt | lolcat
