@@ -155,7 +155,7 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/php/7.0/fpm/pool.d/www.conf "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/www.conf"
 mkdir -p /home/vps/public_html
-echo "<pre>Setup by Fluxo | telegram @CuCu_Atok </pre>" > /home/vps/public_html/index.php
+echo "<pre>Setup by Cucuatok | telegram @CuCu_Atok </pre>" > /home/vps/public_html/index.php
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/vps.conf"
 sed -i 's/listen = \/var\/run\/php7.0-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/7.0/fpm/pool.d/www.conf
@@ -169,7 +169,7 @@ echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
 cd;rm *.sh;rm *.txt;rm *.tar;rm *.deb;rm *.asc;rm *.zip;rm ddos*;
 # Badvpn
 apt-get -y install cmake make gcc
-wget https://atokcucu.arifcloud.cf/badvpn-1.999.127.tar.bz2
+wget https://raw.githubusercontent.com/cucuatok93/cucuatok/master/badvpn-1.999.127.tar.bz2
 tar xf badvpn-1.999.127.tar.bz2
 mkdir badvpn-build
 cd badvpn-build
