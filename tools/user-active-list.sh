@@ -26,4 +26,3 @@ clear
 echo ""
 
 cat /root/activeuser.txt
-echo "
