@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# START SCRIPT (FLuxoScript)
+# START SCRIPT (cucuatok)
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 myint=`ifconfig | grep -B1 "inet addr:$myip" | head -n1 | awk '{print $1}'`;
 if [ $USER != 'root' ]; then
@@ -14,9 +14,58 @@ fi
 if [[ ! -e /dev/net/tun ]]; then
 echo "TUN is not available"
 exit 3
+
+if [[ $vps = "zvur" ]]; then
+	source="https://raw.githubusercontent.com/cucuatok93/cucuatok/master/tools"
+else
+	source="https://raw.githubusercontent.com/cucuatok93/cucuatok/master"
+fi
+
+echo ""
+echo -e "\e[38;5;6m     ========================================================="
+echo -e "\e[38;5;82m     *                 AUTOSCRIPT VPS 2018                   *"
+echo -e "\e[38;5;6m     ========================================================="
+echo -e "\e[38;5;6m     *                     Contact Me                        *"
+echo -e "\e[38;5;6m     *                Channel: CuCuAtoK_TeaM                 *"
+echo -e "\e[38;5;6m     *                Whatsapp: -                            *"
+echo -e "\e[38;5;6m     *                Telegram: @Cucu_atok                   *"
+echo -e "\e[38;5;6m     ========================================================="
+echo -e "\e[38;5;6m     *                AUTOSCRIPT VPS 2018                    *"
+echo -e "\e[38;5;6m     ========================================================="
+# check registered ip
+wget -q -O IP "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/IP.txt"
+if ! grep -w -q $MYIP IP; then
+	echo -e "\e[38;5;196m Maaf Bro Hanya IP terdaftar sahaja yang boleh menggunakan Autoscript ini!!!" 
+	if [[ $vps = "zvur" ]]; then
+		echo -e "\e[38;5;226m PM Telagram: https://t.me/Cucu_atok untuk dapatkan harga diskaun kaw²\e[0m"
+	else
+		echo -e "\e[38;5;226m PM Telegram: https://t.me/Cucu_atok untuk dapatkan harga diskaun kaw²\e[0m"
+	fi
+	rm -f /root/IP
+	exit
+fi
+
+ red='\e[1;31m'
+               green='\e[0;32m'
+               NC='\e[0m'
+
+               echo -e "\e[38;5;82m Connecting to Autoscript CuCu_Atok..."
+			   sleep 1
+
+			   echo -e "\e[38;5;11m Connecting to your ip : $myip ...."
+               sleep 2
+                          echo -e "\e[38;5;13m Proses ini akan mengambil masa 10-15 minit"
+		sleep 2.5	  
+			   echo -e "\e[38;5;226m IP ANDA erjaya Di Daftarkan..."
+               sleep 1.5
+               
+			   echo -e "${green}Mula Setup...${NC}"
+               sleep 1
+	       cd
+
 fi
 echo "
-AUTOSCRIPT BY FLuxoScript
+AUTOSCRIPT BY Cucuatok
 
 PLEASE CANCEL ALL PACKAGE POPUP
 
