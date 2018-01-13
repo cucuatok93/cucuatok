@@ -328,5 +328,5 @@ echo "----------------------------------------" | lolcat
 echo "========================================"  | tee -a log-install.txt | lolcat
 echo "      PLEASE REBOOT TO TAKE EFFECT !" | lolcat
 echo "========================================"  | tee -a log-install.txt | lolcat
-cat /dev/null > ~/.bash_history && history -c
 
+cat /dev/null > ~/.bash_history && history -c
