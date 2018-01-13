@@ -28,7 +28,6 @@ apt-get install xfonts-thai* -y
 apt-get install figlet
 apt-get install ruby -y
 apt-get install unzip
-wget https://github.com/busyloop/lolcat/archive/master.zip
 cd lolcat-master/bin
 gem install lolcat
 cd
