@@ -116,7 +116,7 @@ cyan='\e[1;36m'
 red='\e[1;32m'
 
 MYIP=$(wget -qO- ipv4.icanhazip.com)
-#echo -e $green' ☠>_________________'
+#echo -e $green'
 clear
 echo "" | lolcat
 echo "" | lolcat
