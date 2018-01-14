@@ -41,7 +41,7 @@ echo -e "     Aktif Sampai: $exp                  " | lolcat
 echo -e "=========================================" | lolcat
 echo -e "   DI LARANG:                            " | lolcat
 echo -e "   HACKING-DDOS-PHISING-SPAM-TORENT      " | lolcat
-echo -e "   TeaM   CuCu_AtoK.               " | lolcat
+echo -e "   TeaM  CuCu_AtoK.                      " | lolcat
 echo -e "=========================================" | lolcat
 echo -e "   Script by Team CuCuAtoK             " | lolcat
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
@@ -229,7 +229,7 @@ echo "" | lolcat
 echo "" | lolcat
 echo "" | lolcat
 echo "" | lolcat
-echo "        ----[SELAMAT DATANG DI VPS CuCu_AtoK  - ]---"| lolcat
+echo "              ----[SELAMAT DATANG DI VPS CuCu_AtoK  - ]---"| lolcat
 echo "        ====================================================="| lolcat
 echo "        #           WhatsApp     : +60175835809            #"| lolcat
 echo "        #           Telegram     : @cucu_atok                 #"| lolcat
@@ -263,7 +263,7 @@ do
         "Perbarui User")
             read -p "Enter username yg di perbarui: " uname
             read -p "Aktif sampai tanggal Thn-Bln-Hr(YYYY-MM-DD): " expdate
-            renew_user | boxes -d dog | lolcat
+            renew_user | boxes -d peek | lolcat
             break
             ;;
 	 "Semua User")
