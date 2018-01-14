@@ -34,7 +34,7 @@ echo -e "\e[38;5;6m     ========================================================
 echo -e "\e[38;5;6m     *                     Contact Me                        *"
 echo -e "\e[38;5;6m     *                Channel: CuCuAtoK_TeaM                 *"
 echo -e "\e[38;5;6m     *                Whatsapp: -                            *"
-echo -e "\e[38;5;6m     *                Telegram: @Cucu_atok                   *"
+echo -e "\e[38;5;196m     *                Telegram: @Cucu_atok                   *"
 echo -e "\e[38;5;6m     ========================================================="
 echo -e "\e[38;5;226m     *                AUTOSCRIPT VPS 2018                    *"
 echo -e "\e[38;5;6m     ========================================================="
