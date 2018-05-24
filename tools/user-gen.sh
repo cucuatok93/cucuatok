@@ -34,7 +34,7 @@ useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$pass\n$pass\n"|passwd $uname &> /dev/null
 echo -e ""| lolcat
-echo -e "|      Informasi Akun Baru SSH      |" | boxes -d dog | lolcat
+echo -e "|      Informasi Akun Baru SSH      |" | boxes -d peek | lolcat
 echo -e "===========-[[SERVER-PREMIUM]]-============" | lolcat
 echo -e "     Host: $MYIP" | lolcat
 echo -e "     Username: $uname" | lolcat
@@ -51,7 +51,7 @@ echo -e "   WARNING BAN FOR:                              "| lolcat
 echo -e "   HACKING-DDOS-PHISING-SPAM-TORENT        " | lolcat
 echo -e "   CARDING-CRIMINAL CYBER.                 "| lolcat
 echo -e "===========================================" | lolcat
-echo -e "   Script by inject69               "| lolcat
+echo -e "   Script by CuCu_AtoK               "| lolcat
 echo -e "   Config OVPN:                            "| lolcat
 echo -e "   http://$MYIP:81/client.tar        " | lolcat
 echo -e "-------------------------------------------" | lolcat
