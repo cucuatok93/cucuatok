@@ -148,12 +148,16 @@ wget -O /etc/rc.local "https://raw.githubusercontent.com/cucuatok93/cucuatok/mas
 #wget -O /etc/iptables.up.rules "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/iptables.up.rules"
 #sed -i "s/ipserver/$myip/g" /etc/iptables.up.rules
 #iptables-restore < /etc/iptables.up.rules
-# nginx
-wget -O /etc/nginx/nginx.conf "$source/nginx.conf"
-echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
-wget -O /etc/nginx/conf.d/vps.conf "$source/vps.conf"
+# Install Nginx + PHP
+apt-get -y install nginx php5 php5-fpm php5-cli php5-mysql php5-mcrypt
+rm /etc/nginx/sites-enabled/default
+rm /etc/nginx/sites-available/default
+mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
+mv /etc/nginx/conf.d/vps.conf /etc/nginx/conf.d/vps.conf.backup
+wget -O /etc/nginx/nginx.conf "https://githubusercontent.com/cucuatok93/cucuatok/master/nginx.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://githubusercontent.com/cucuatok93/cucuatok/master/vps.conf"
+sed -i 's/cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php5/fpm/php.ini
 sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
-echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 service php5-fpm restart
 service nginx restart
 
