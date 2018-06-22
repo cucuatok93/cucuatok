@@ -138,9 +138,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # squid3
 apt-get -y install squid3
 wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/squid.conf"
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/squid.conf"
 sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
-sed -i "s/ipserver/$myip/g" /etc/squid/squid.conf
 # openvpn
 apt-get -y install openvpn
 wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/openvpn.tar"
