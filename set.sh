@@ -122,20 +122,33 @@ TAKE TIME 5-10 MINUTE
 # script
 wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/common-password"
 chmod +x /etc/pam.d/common-password
+
 # fail2ban & exim & protection
 apt-get -y install fail2ban sysv-rc-conf dnsutils dsniff zip unzip;
 wget https://github.com/jgmdev/ddos-deflate/archive/master.zip;unzip master.zip;
 cd ddos-deflate-master && ./install.sh
 service exim4 stop;sysv-rc-conf exim4 off;
-# webmin
-apt-get -y install webmin
+
+# install webmin
+cd
+wget "http://prdownloads.sourceforge.net/webadmin/webmin_1.831_all.deb"
+dpkg --install webmin_1.831_all.deb;
+apt-get -y -f install;
+rm /root/webmin_1.831_all.deb
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
+service webmin restart
+service vnstat restart
 
 # dropbear
 apt-get -y install dropbear
 wget -O /etc/default/dropbear "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/dropbear"
 echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
+
+# setting port ssh
+sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
+sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
+service ssh restart
 
 # squid3
 apt-get -y install squid3
