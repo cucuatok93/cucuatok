@@ -130,14 +130,8 @@ cd ddos-deflate-master && ./install.sh
 service exim4 stop;sysv-rc-conf exim4 off;
 
 # install webmin
-cd
-wget "http://prdownloads.sourceforge.net/webadmin/webmin_1.831_all.deb"
-dpkg --install webmin_1.831_all.deb;
-apt-get -y -f install;
-rm /root/webmin_1.831_all.deb
+apt-get -y install webmin
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
-service webmin restart
-service vnstat restart
 
 # dropbear
 apt-get -y install dropbear
