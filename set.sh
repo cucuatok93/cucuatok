@@ -130,10 +130,14 @@ cd ddos-deflate-master && ./install.sh
 service exim4 stop;sysv-rc-conf exim4 off;
 
 # install webmin
-wget -O webmin-current.deb "http://www.webmin.com/download/deb/webmin-current.deb"
-dpkg -i --force-all webmin-current.deb;
+cd
+wget "http://prdownloads.sourceforge.net/webadmin/webmin_1.831_all.deb"
+dpkg --install webmin_1.831_all.deb;
 apt-get -y -f install;
-rm /root/webmin-current.deb
+rm /root/webmin_1.831_all.deb
+sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
+service webmin restart
+service vnstat restart
 
 # dropbear
 apt-get -y install dropbear
@@ -353,7 +357,7 @@ service dropbear restart
 service nginx restart
 service php7.0-fpm restart
 service webmin restart
-service squid restart
+service squid3 restart
 service fail2ban restart
 cd
 red='\e[1;31m'
