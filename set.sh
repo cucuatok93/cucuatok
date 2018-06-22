@@ -143,12 +143,12 @@ sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
 sed -i "s/ipserver/$myip/g" /etc/squid/squid.conf
 # openvpn
 apt-get -y install openvpn
-wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/opennvpn.tar"
-cd /etc/openvpn/;tar xf openvpn.tar;rm openvpn.tar
-wget -O /etc/rc.local "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/rc.local";chmod +x /etc/rc.local
-#wget -O /etc/iptables.up.rules  "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/iptables.up.rules"
-#sed -i "s/ipserver/$myip/g" /etc/iptables.up.rules
-#iptables-restore < /etc/iptables.up.rules
+cd /etc/openvpn/
+wget $source/openvpn.tar;tar xf openvpn.tar;rm openvpn.tar
+wget -O /etc/iptables.up.rules "$source/iptables.up.rules"
+sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
+sed -i "s/ipserver/$myip/g" /etc/iptables.up.rules
+iptables-restore < /etc/iptables.up.rules
 # nginx
 apt-get -y install nginx php-fpm php-mcrypt php-cli libexpat1-dev libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
