@@ -137,7 +137,7 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 # squid3
 apt-get -y install squid3
-wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/squid.conf"
+wget -O /etc/squid3/squid.conf "$source/squid.conf"
 sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
 # openvpn
 apt-get -y install openvpn
@@ -148,15 +148,13 @@ wget -O /etc/rc.local "https://raw.githubusercontent.com/cucuatok93/cucuatok/mas
 #sed -i "s/ipserver/$myip/g" /etc/iptables.up.rules
 #iptables-restore < /etc/iptables.up.rules
 # nginx
-apt-get -y install nginx php-fpm php-mcrypt php-cli libexpat1-dev libxml-parser-perl
-rm /etc/nginx/sites-enabled/default
-rm /etc/nginx/sites-available/default
-wget -O /etc/php/7.0/fpm/pool.d/nginx.conf "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/nginx.conf"
-mkdir -p /home/vps/public_html
-echo "<pre>Setup by Cucuatok | telegram @CuCu_Atok </pre>" > /home/vps/public_html/index.php
+wget -O /etc/nginx/nginx.conf "$source/nginx.conf"
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/vps.conf"
-sed -i 's/listen = \/var\/run\/php7.0-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/7.0/fpm/pool.d/www.conf
+wget -O /etc/nginx/conf.d/vps.conf "$source/vps.conf"
+sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
+echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
+service php5-fpm restart
+service nginx restart
 # etc
 wget -O /home/vps/public_html/client.ovpn "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/client.ovpn"
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
