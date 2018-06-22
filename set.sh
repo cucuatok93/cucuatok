@@ -135,10 +135,11 @@ apt-get -y install dropbear
 wget -O /etc/default/dropbear "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/dropbear"
 echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
-# squid3
+# install squid3
 apt-get -y install squid3
-wget -O /etc/squid3/squid.conf "$source/squid.conf"
-sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
+wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/squid3.conf"
+sed -i $MYIP2 /etc/squid3/squid.conf;
+service squid3 restart
 # openvpn
 apt-get -y install openvpn
 wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/openvpn.tar"
@@ -155,6 +156,11 @@ sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php
 echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 service php5-fpm restart
 service nginx restart
+
+
+# install fail2ban
+apt-get -y install fail2ban;service fail2ban restart
+
 # etc
 wget -O /home/vps/public_html/client.ovpn "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/client.ovpn"
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
@@ -288,6 +294,38 @@ chmod +x /usr/bin/user-renew
 chmod +x /usr/bin/clearcache.sh
 chmod +x /usr/bin/bannermenu
 cd
+
+#bonus block playstation
+iptables -A OUTPUT -d account.sonyentertainmentnetwork.com -j DROP
+iptables -A OUTPUT -d auth.np.ac.playstation.net -j DROP
+iptables -A OUTPUT -d auth.api.sonyentertainmentnetwork.com -j DROP
+iptables -A OUTPUT -d auth.api.np.ac.playstation.net -j DROP
+iptables-save
+
+#bonus block torrent
+iptables -A INPUT -m string --algo bm --string "BitTorrent" -j REJECT
+iptables -A INPUT -m string --algo bm --string "BitTorrent protocol" -j REJECT
+iptables -A INPUT -m string --algo bm --string "peer_id=" -j REJECT
+iptables -A INPUT -m string --algo bm --string ".torrent" -j REJECT
+iptables -A INPUT -m string --algo bm --string "announce.php?passkey=" -j REJECT
+iptables -A INPUT -m string --algo bm --string "torrent" -j REJECT
+iptables -A INPUT -m string --algo bm --string "info_hash" -j REJECT
+iptables -A INPUT -m string --algo bm --string "/default.ida?" -j REJECT
+iptables -A INPUT -m string --algo bm --string ".exe?/c+dir" -j REJECT
+iptables -A INPUT -m string --algo bm --string ".exe?/c_tftp" -j REJECT
+iptables -A INPUT -m string --string "peer_id" --algo kmp -j REJECT
+iptables -A INPUT -m string --string "BitTorrent" --algo kmp -j REJECT
+iptables -A INPUT -m string --string "BitTorrent protocol" --algo kmp -j REJECT
+iptables -A INPUT -m string --string "bittorrent-announce" --algo kmp -j REJECT
+iptables -A INPUT -m string --string "announce.php?passkey=" --algo kmp -j REJECT
+iptables -A INPUT -m string --string "find_node" --algo kmp -j REJECT
+iptables -A INPUT -m string --string "info_hash" --algo kmp -j REJECT
+iptables -A INPUT -m string --string "get_peers" --algo kmp -j REJECT
+iptables -A INPUT -p tcp --dport 25 -j REJECT   
+iptables -A FORWARD -p tcp --dport 25 -j REJECT 
+iptables -A OUTPUT -p tcp --dport 25 -j REJECT 
+iptables-save
+
 # restart service
 service ssh restart
 service openvpn restart
