@@ -153,7 +153,7 @@ wget -O /etc/rc.local "https://raw.githubusercontent.com/cucuatok93/cucuatok/mas
 apt-get -y install nginx php-fpm php-mcrypt php-cli libexpat1-dev libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/php/7.0/fpm/pool.d/www.conf "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/nginx.conf"
+wget -O /etc/php/7.0/fpm/pool.d/nginx.conf "https://raw.githubusercontent.com/cucuatok93/cucuatok/master/nginx.conf"
 mkdir -p /home/vps/public_html
 echo "<pre>Setup by Cucuatok | telegram @CuCu_Atok </pre>" > /home/vps/public_html/index.php
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
